@@ -26,7 +26,7 @@ const CollectionConfig: CollectionConfigInterface = {
     price: 0.003,
     maxMintAmountPerTx: 5,
   },
-  contractAddress:null,
+  contractAddress:"0xb8BA3E7830Ed5EBD8cd08a58B3093Baa6EF2379a",
   marketplaceIdentifier: 'GoblinsarabsNFT',
   marketplaceConfig: Marketplaces.openSea,
   whitelistAddresses,
