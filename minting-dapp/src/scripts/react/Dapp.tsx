@@ -72,7 +72,7 @@ export default class Dapp extends React.Component<Props, State> {
           <br />
           But don't worry! <span className="emoji">😃</span> You can always interact with the smart-contract through <a href={this.generateContractUrl()} target="_blank">{this.state.networkConfig.blockExplorer.name}</a> and <strong>we do our best to provide you with the best user experience possible</strong>, even from there.<br />
           <br />
-          You can also get your <strong>Whitelist Proof</strong> manually, using the tool below.
+         
         </>,
       );
     }
@@ -238,9 +238,10 @@ export default class Dapp extends React.Component<Props, State> {
             }
           </>
         :
-        <div className="no-wallet ">
+        <div className="no-wallet">
           
-        <div className="welcome  text-center font-sans py-8">
+        <div className="welcome  text-center font-sans ">
+          
             
         <div className="text-2xl ">ₐₐₐₐₐₐₐᵤᵤᵤᵤᵤGGGₕₕₕₕₕ
 ₙₒ ₑₑₙₛₜₐgᵣᵤₘ</div>
@@ -248,10 +249,26 @@ export default class Dapp extends React.Component<Props, State> {
                   5500 ງ໐๖liຖŞ คrē ຖ໐ຟ iຖ thē คrค๖ pēຖiŞนlค,
           frēē๓iຖt ຟith นtilitฯ, Ʉ₲ⱠɎ ₣Ø₦₮Ɇ₦Đ  😪😖 Ɽł₵Ⱨ ฿₳₵₭Ɇ₦Đ 😁🤑  </div>
                   </div>
+                  {!this.isWalletConnected() || this.state.isWhitelistMintEnabled ?
+          <div className="merkle-proof-manual-address">
+            <h2>Whitelist Proof</h2>
+            <p>
+              Check if your on the Whitelist <strong> only the owner of that address</strong> 
+            </p>
 
+            {this.state.merkleProofManualAddressFeedbackMessage ? <div className="feedback-message">{this.state.merkleProofManualAddressFeedbackMessage}</div> : null}
+
+            <label htmlFor="merkle-proof-manual-address">Public address:</label>
+            <input id="merkle-proof-manual-address" type="text" placeholder="0x000..." disabled={this.state.userAddress !== null} value={this.state.userAddress ?? this.state.merkleProofManualAddress} ref={(input) => this.merkleProofManualAddressInput = input!} onChange={() => {this.setState({merkleProofManualAddress: this.merkleProofManualAddressInput.value})}} /> <button onClick={() => this.copyMerkleProofToClipboard()}>Generate and copy to clipboard</button>
+          </div>
+          : null}
+
+
+      
 
         <div className="use-block-explorer bg-gray-800  text-center pb-6"   >
-        {!this.isWalletConnected() ? <button className="bg-gray-300  " disabled={this.provider === undefined} onClick={() => this.connectWallet()}>Connect Wallet</button> : null}
+          
+       {!this.isWalletConnected() ? <button className="bg-gray-300  " disabled={this.provider === undefined} onClick={() => this.connectWallet()}>Connect Wallet</button> : null}
          
       
         </div>
