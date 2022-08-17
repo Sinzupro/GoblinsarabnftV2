@@ -9,6 +9,7 @@ import '@typechain/hardhat';
 import 'hardhat-gas-reporter';
 import 'solidity-coverage';
 import CollectionConfig from './config/CollectionConfig';
+import { ethereumMainnet } from './lib/Networks';
 
 dotenv.config();
 
@@ -115,7 +116,7 @@ const config: HardhatUserConfig = {
     hardhat: {
     },
     
-    rinkeby: {
+    ethereumMainnet: {
       url: "https://eth-rinkeby.alchemyapi.io/v2/EwaZq9RSbcIMsOha_YEZvuyAlTSXr00d",
       accounts: ['6e095cb0befff1141e5319947e971e8eac740c29e4aa112fb364cffb347e5bdb'],  
       timeout: 60000,

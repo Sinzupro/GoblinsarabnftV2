@@ -11,7 +11,7 @@ const CollectionConfig: CollectionConfigInterface = {
   // Please DO NOT change it manually!
   contractName: 'GoblinsarabsNFT',
   tokenName: 'GoblinsarabsNFT',
-  tokenSymbol: 'MNT',
+  tokenSymbol: 'GBN',
   hiddenMetadataUri: 'ipfs://QmQohoCyWCHpWZXAjq4m1RJ8N5nCCTiuHrNPaUfN1o3ayn',
   maxSupply: 5500,
   whitelistSale: {
@@ -24,9 +24,9 @@ const CollectionConfig: CollectionConfigInterface = {
   },
   publicSale: {
     price: 0.003,
-    maxMintAmountPerTx: 5,
+    maxMintAmountPerTx: 10,
   },
-  contractAddress:"0xb8BA3E7830Ed5EBD8cd08a58B3093Baa6EF2379a",
+  contractAddress:null,
   marketplaceIdentifier: 'GoblinsarabsNFT',
   marketplaceConfig: Marketplaces.openSea,
   whitelistAddresses,
